@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.concurrent.TimeUnit;
 
 public class Table extends JFrame {
     private static final int WIDTH = 858;
@@ -24,6 +25,11 @@ public class Table extends JFrame {
         t.center();
         while(true){
             t.ball.updatePos();
+            try {
+                TimeUnit.SECONDS.sleep(10);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
     public Table(){

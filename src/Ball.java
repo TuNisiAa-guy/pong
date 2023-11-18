@@ -15,10 +15,9 @@ public class Ball extends JPanel{
         setVisible(true);
     }
     public void updatePos(){
+        posX += (int) Math.sin(direction/(360 * Math.TAU)) * SPEED;
+        posX += (int) Math.cos(direction/(360 * Math.TAU)) * SPEED;
         setLocation(posX, posY);
-        int vectorX = (int) Math.sin(direction/(360 * Math.TAU)) * SPEED;
-        int vectorY = (int) Math.cos(direction/(360 * Math.TAU)) * SPEED;
-        setLocation(vectorX, vectorY);
     }
 
     public void center(){
