@@ -7,7 +7,7 @@ public class Ball extends JPanel{
     private int posY = 0;
     private final int HEIGHT = 20;
     private final int WIDTH = 20;
-    private static final int SPEED = 20;
+    private static final int SPEED = 2;
     public Ball(){
         setBackground(Color.WHITE);
         center();
@@ -15,8 +15,8 @@ public class Ball extends JPanel{
         setVisible(true);
     }
     public void updatePos(){
-        posX += (int) Math.sin(direction/(360 * Math.TAU)) * SPEED;
-        posX += (int) Math.cos(direction/(360 * Math.TAU)) * SPEED;
+        posX += (int) (Math.sin(direction/(360 * Math.TAU)) * SPEED);
+        posX += (int) (Math.cos(direction/(360 * Math.TAU)) * SPEED);
         setLocation(posX, posY);
     }
 

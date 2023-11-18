@@ -26,7 +26,7 @@ public class Table extends JFrame {
         while(true){
             t.ball.updatePos();
             try {
-                TimeUnit.SECONDS.sleep(10);
+                TimeUnit.MILLISECONDS.sleep(10);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
