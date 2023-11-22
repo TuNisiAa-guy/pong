@@ -40,7 +40,7 @@ public class Table extends JFrame {
         getContentPane().setBackground(Color.BLACK);
         player1 = new Racket(false, true);
         player2 = new Racket(false, false);
-        ball = new Ball();
+        ball = new Ball(this);
         add(player1);
         add(player2);
         add(ball);
@@ -66,9 +66,21 @@ public class Table extends JFrame {
         });
     }
     public void center(){
-        Dimension size = Toolkit. getDefaultToolkit(). getScreenSize();
+        Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (size.width - Table.WIDTH) / 2;
         int y = (size.height - Table.HEIGHT) / 2;
         setLocation(x, y);
+    }
+
+    public Racket getPlayer1() {
+        return player1;
+    }
+
+    public Racket getPlayer2() {
+        return player2;
+    }
+
+    public Ball getBall() {
+        return ball;
     }
 }
