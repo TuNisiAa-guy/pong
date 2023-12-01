@@ -29,6 +29,15 @@ public class Ball extends JPanel{
         posX += deltaX;
         posY += deltaY;
         setLocation(posX, posY);
+        if(posX < 0){
+            center();
+            table.getPlayer2().setScore(table.getPlayer2().getScore() + 1);
+            System.out.printf("%d | %d\n", table.getPlayer1().getScore(), table.getPlayer2().getScore());
+        }else if(posX > Table.getWIDTH()){
+            center();
+            table.getPlayer1().setScore(table.getPlayer1().getScore() + 1);
+            System.out.printf("%d | %d\n", table.getPlayer1().getScore(), table.getPlayer2().getScore());
+        }
     }
     public void center(){
         posX = (Table.getWIDTH() - WIDTH) / 2;

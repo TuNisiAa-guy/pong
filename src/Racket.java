@@ -8,6 +8,16 @@ public class Racket extends JPanel {
     private int posY;
     private static final int SPEED = 10;
     private boolean isPlayer;
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    private int score = 0;
     public Racket(boolean auto, boolean side){
         isPlayer = !auto;
         setBackground(Color.WHITE);
